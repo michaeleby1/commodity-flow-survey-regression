@@ -5,14 +5,21 @@
 **Dataset:** 2012 Commodity Flow Survey: The CFS data are used by policy makers and transportation planners in various federal, state, and local agencies for assessing the demand for transportation facilities and services, energy use, and safety risk and environmental concerns. The report is released every 5 years (2012 most recent completed survey), and includes 4.5 million individual shipments with 20 features each.
 
 **Contributors:**
+
 Michael Eby
+
 Melissa Munz
 
 **Background:**
+
 Flatiron Data Science Module 5
+
 Feature Engineering and Regression Analysis for Machine Learning
 
-**Study Aim:** To predict shipment value in US dollars given:
+**Study Aim:** 
+
+To predict shipment value in US dollars given:
+
 - NAICS type
 - Origin state 
 - Destination state
@@ -21,7 +28,9 @@ Feature Engineering and Regression Analysis for Machine Learning
 - Distance routed
 - Shipment weight
 
-**Feature Engineering:** In depth analysis provided in commodity_form_survey_regression.ipynb in this reposity.
+**Feature Engineering:** 
+
+In depth analysis provided in commodity_form_survey_regression.ipynb in this reposity.
 
 1. NAICS Codes (North American Industry Classification System) were categorized from 46 codes classifying shipments into 8 groups: Mining, Manufacturing, Wholesale, Online shopping, Fuel, Storage, Publishing, Administration
 
