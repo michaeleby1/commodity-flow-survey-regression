@@ -22,12 +22,12 @@ Our dataset for this project was the 2012 Commodity Flow Survey. Released by the
 Shipments in the survey each included 20 features each. We chose to focus on the features that we intuitively assumed were the most imporant for predicting a shipment's total value in USD:
 
 - NAICS (North American Industry Classification System) code
-- Origin state 
-- Destination state
-- Yearly quarter
 - Mode of transportation
 - Distance routed in miles
 - Shipment weight in USD
+- Yearly quarter
+- Origin state 
+- Destination state
 
 There were almost no correlated features in our dataset.
 
@@ -43,10 +43,19 @@ In order to make the NAICS codes and transportation mode variables manageable, w
 
 ## Scaling Continous Variables
 
-Significant variation between mean shipment values of the NAICS and transportation types as well as abnormally distributed data and varying scales for continuous independent variables meant that values needed to be scaled for the model. 
+Significant variation between mean shipment values of the NAICS codes and transportation types as well as abnormally distributed data and varying scales for continuous independent variables meant that values needed to be scaled for the model. The first variable scaled was the dependent variable, shipment value, as the error was not normally distributed around the mean:
 
+<img src='plots/qq1.png' width=600>
 
-Both min-max scaling and standard scaling failed to improve model performance. Instead, log transformation of the shipment value, shipment weight, and distance travelled yielded higher performance.
+Log-transforming the shipment value significantly improved this.
+
+<img src='plots/qq2.png' width=600>
+
+However, our model was still not performing well with our two continuous variables, shipment weight and distance travelled. 
+Both min-max scaling and standard scaling failed to improve model performance. Instead, log transformation of these variables yielded higher performance. It also made it easier to visualize the differences between the average shipment values of the different the NAICS codes and transportation modes:
+
+<img src='plots/value_naics.png' width=600>
+<img src='plots/value_transport.png' width=600>
 
 ## Final Model
 
